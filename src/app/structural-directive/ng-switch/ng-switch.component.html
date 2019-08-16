@@ -1,0 +1,13 @@
+<h3 style="color : red">RED COLOR</h3>
+<div [ngSwitch]="dkSwitch">
+    <div *ngSwitchCase="'red'" style="color: red"> RED Color</div>
+    <div *ngSwitchCase="'blue'" style="color: blue"> BLUE Color</div>
+    <div *ngSwitchCase="'green'" style="color: green"> GREEN Color</div>
+    <div *ngSwitchDefault style="color: orange"> ORANGE Color</div>
+</div>
+<select #t (change)=changeColor(t.value)>
+    <option value="red"> Red Color</option>
+    <option value="blue"> Blue Color</option>
+    <option value="green"> Green Color</option>
+    <option value="orange"> Orange Color</option>
+</select>

@@ -1,0 +1,8 @@
+<h3 style="color: chocolate">Oneway Biding</h3>
+<!-- Interpolation -->
+<div>{{name}}</div>
+<!-- PropertyBiding -->
+<input type="text" [value]="name" #thamso>
+<!-- EventBiding -->
+<button class="btn btn-success"(click)="EventBiding(thamso.value)">EventBiding</button>
+<p>Giá trị lấy được : {{valueOfInput}}</p>

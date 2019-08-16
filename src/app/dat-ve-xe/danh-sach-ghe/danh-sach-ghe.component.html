@@ -1,0 +1,27 @@
+<h2 style="color: chocolate ; text-align:center">ĐẶT VÉ XE BUS</h2>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-4">
+            <button class="btn btn-secondary mb-3" disabled="disabled" style="display: block;"><span
+                    style="padding:0px 85px">Tài Xế</span></button>
+            <ng-container *ngFor="let item of mangGhe; let index = index">
+                <app-ghe [ghe]="item" (eventPick)="Pick($event)"></app-ghe>
+                <br *ngIf="(index + 1 ) % 4 === 0">
+            </ng-container>
+        </div>
+        <div class="col-sm-4">
+            <h4 class="mt-xl-1">Danh Sách Ghế Đã Đặt</h4>
+            <ng-container *ngFor="let item of mangGheDangChon; let index = index">
+                <p style="margin:0px">Ghế : số ghế {{item.SoGhe}} $100 <button style="color: red; padding-top: -3px"
+                        class="btn btn-link" (click)="HuyGhe(item)">[Hủy]</button></p>
+            </ng-container>
+        </div>
+        <div class="col-sm-4">
+            <h4 class="mt-xl-1">Thanh Toán</h4>
+            <h5>Tổng Tiền : $ {{tongTien}} </h5>
+            <button class="btn btn-primary" (click)= "ThanhToan()" > Thanh Toán</button>
+        </div>
+    </div>
+</div>

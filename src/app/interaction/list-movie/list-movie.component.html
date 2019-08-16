@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let item of danhSachPhim">
+            <app-movie [phim]="item" (eventLike)="Like($event)"></app-movie>
+        </div>
+    </div>
+
+    <button class="btn btn-success" (click)="ModifyCost()">View Children</button>
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Danh Sách Like :)</h4>
+            <div *ngFor="let item of danhSachLike">
+                {{item.tenPhim}} - số like:  {{item.soLike}}
+            </div>
+        </div>
+    </div>
+</div>

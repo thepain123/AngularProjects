@@ -1,0 +1,18 @@
+<div *ngIf="status">CyberSoft</div>
+<button class="btn btn-success" (click)="Show()">Show</button>
+<button class="btn btn-danger" (click)="Hide()">Hide</button>
+<button class="btn btn-info" (click)="Toggle()">Toggle</button>
+
+<hr>
+<div *ngIf="!statusLogin; else ElseContent">
+    <button class="btn btn-danger" (click)="Logout()">Logout</button>
+    <br>
+    <br>
+    <h3>Hello :)</h3>
+</div>
+<ng-template #ElseContent>
+    <button class="btn btn-success" (click)="Login()">Login</button>
+    <br>
+    <br>
+    <h3>Chưa Đăng Nhập</h3>
+</ng-template>

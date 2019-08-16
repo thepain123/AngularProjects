@@ -1,0 +1,39 @@
+<h3>Bài tập Thêm sản phẩm</h3>
+<div class="form-group">
+    <label>Mã Sản phẩm</label>
+    <input type="text" #code class="form-control">
+    <label>Tên Sản phẩm </label>
+    <input type="text" #name class="form-control">
+    <label>Giá sản phẩm</label>
+    <input type="text" #cost class="form-control">
+    <button type="button" (click)=ThemSanPham(code.value,name.value,cost.value) class="btn btn-success"> Thêm sản phẩm
+    </button>
+</div>
+<hr>
+
+<table class="table">
+    <thead>
+        <tr class="bg-dark text-white ">
+            <th class="pl-5">STT</th>
+            <th>Mã Sản phẩm</th>
+            <th>TênSản phẩm</th>
+            <th>Giá Sản phẩm</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngIf="danhSachSanPham && danhSachSanPham.length > 0">
+            <tr *ngFor="let SanPham of danhSachSanPham; let stt = index" [ngClass]="{bgColor:stt % 2 === 0}">
+                <td>{{stt+1}}</td>
+                <td>{{SanPham.itemCode}}</td>
+                <td>{{SanPham.itemName}}</td>
+                <td>{{SanPham.itemCost}}</td>
+            </tr>
+        </ng-container>
+
+    </tbody>
+</table>
+<ng-template #template>
+    <div>CyberSoft</div>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="template"></ng-container>

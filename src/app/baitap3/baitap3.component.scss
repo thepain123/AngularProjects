@@ -1,0 +1,31 @@
+@mixin ContentConfig($backgroundColor, $width) {
+    background-color: $backgroundColor;
+    width: $width;
+    color: white;
+    padding: 100px;
+    text-align: center;
+  }
+  @mixin HeaderFooterConfig($backgroundColor) {
+      background-color: $backgroundColor;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      display: block;
+    }
+  .header {
+      @include HeaderFooterConfig(#ff4a4d);
+  }
+  .contents {
+    display: flex;
+  
+    .content {
+      @include ContentConfig(#ffc64a, 80%);
+    }
+    .sidebar {
+      @include ContentConfig(#85c69d, 20%);
+    }
+  }
+  .footer{
+      @include HeaderFooterConfig(#3b83b1);
+  }
+  
